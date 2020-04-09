@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Đổi chỗ hai số nguyên</title>
+</head>
+<body>
+<p>Đổi chỗ hai số nguyên</p>
+<p>Hai số nguyên: <span id="content"></span></p>
+<button onclick="enterNumber()">Nhập số nguyên</button>
+<button onclick="changerPosition()">Đổi vị trí 2 số nguyên</button>
+<script type="text/javascript">
+	let arr        = [];
+	let changerArr = [];
+	function enterNumber() {
+		let i = 1;
+		while(i < 3){
+			let enterNumber = Number(prompt('Enter integer '+i));
+			arr[i-1] = enterNumber;
+			i++
+		}
+		document.getElementById('content').innerText = arr.join(', ');
+		changerArr = [];
+	}
+	function changerPosition(){
+		for (let i = arr.length - 1; i >= 0; i--) {
+			changerArr.push(arr[i]);
+		}
+		arr = changerArr;
+		changerArr = [];
+		document.getElementById('content').innerText = arr.join(', ');
+	}
+</script>
+</body>
+</html>
